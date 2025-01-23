@@ -1,4 +1,4 @@
-package model.entities.model;
+package model.exception;
 
 import java.io.Serial;
 

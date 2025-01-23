@@ -1,6 +1,6 @@
 package model.entities;
 
-import model.entities.model.BusinessException;
+import model.exception.BusinessException;
 
 public class Account {
     private Integer number;
