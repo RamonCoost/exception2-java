@@ -1,6 +1,7 @@
 package application;
 
 import model.entities.Account;
+import model.entities.model.BusinessException;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -28,13 +29,12 @@ public class Program {
         System.out.print("Infome a quantia para sacar: ");
         double amount = sc.nextDouble();
 
-        String erro = acc.validateWithdraw(amount);
-        if (erro != null) {
-            System.out.println(erro);
-        }
-        else {
+        try {
             acc.withdraw(amount);
             System.out.printf("Novo Saldo: %.2f", acc.getBalance());
+        }
+        catch (BusinessException e) {
+            System.out.println(e.getMessage());
         }
 
         sc.close();
